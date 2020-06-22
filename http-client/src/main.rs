@@ -1,5 +1,7 @@
+use failure::Error;
+
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+async fn main() -> Result<(), Error> {
     let res = reqwest::Client::builder()
         .danger_accept_invalid_certs(true)
         .build()
